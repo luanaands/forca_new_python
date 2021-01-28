@@ -1,8 +1,22 @@
+
+def letra_existe(palavra, letra):
+    cont = 0
+    for i, c in enumerate(palavra):
+        if (c == letra):
+            palavraAuxiliar[i] = letra
+            cont += 1
+    if (cont > 0): 
+        print("Acertou a letra \t")
+        print("Descubra a palavra {}".format(palavraAuxiliar))
+    else:
+        print("Não acertou \t")
+        print("Descubra a palavra {}".format(palavraAuxiliar))
+
 # fixo 
 # chances = 5
 # chute  
 cont = 0
-palavraFixa = "gato"
+palavraFixa = "palavra"
 tamanho = len(palavraFixa)
 
 """ aqui converte em lista (string to lista), 
@@ -12,10 +26,8 @@ palavraAuxiliar = list('-' * tamanho)
 
 print("Descubra a palavra {}".format(palavraAuxiliar))
 letra = input()
-index = palavraFixa.find(letra)
-if (index != -1):
-    palavraAuxiliar[index] = letra
-print("Descubra a palavra {}".format(palavraAuxiliar))
+
+letra_existe(palavraFixa, letra)
 
 
 
