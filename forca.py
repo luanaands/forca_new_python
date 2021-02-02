@@ -1,3 +1,13 @@
+def find_boneco(chute):
+    tela = { 7 : "", 
+        6 : "  \n||\n||\n", 
+        5 : "\n(||\n ||\n",
+        4 : "\n(||)\n ||\n",
+        3 : "\n(||)\n ||\n /" ,
+        2 : "\n(||)\n ||\n /|",
+        1 : "\n(||)\n ||\n /|",
+        0 : "  O\n(||)\n ||\n /|"}
+    return tela[chute]
 
 def letra_existe(palavra, letra):
     cont = 0
@@ -5,45 +15,35 @@ def letra_existe(palavra, letra):
         if (c == letra):
             palavraAuxiliar[i] = letra
             cont += 1
-    if (cont > 0): 
+    return cont
+
+palavraFixa = "palavra"
+tamanho = len(palavraFixa)
+palavraAuxiliar = list('-' * tamanho) 
+chutes = 7
+letras = 0
+while chutes > 0:
+    boneco = find_boneco(chutes)
+    print(boneco)
+    print('Sua chance atual é {}'.format(chutes))
+    print("Descubra a palavra {}".format(palavraAuxiliar))
+    if tamanho == letras:
+        break
+    letra = input()
+    valor = letra_existe(palavraFixa, letra)
+    if valor > 0: 
+        letras += valor
         print("Acertou a letra \t")
         print("Descubra a palavra {}".format(palavraAuxiliar))
     else:
         print("Não acertou \t")
         print("Descubra a palavra {}".format(palavraAuxiliar))
+        chutes-= 1
+if chutes == 0:
+    boneco = find_boneco(chutes)
+    print("Perdeu!")
+    print(boneco)
+else:
+    print("Ganhou!")
 
-# fixo 
-# chances = 5
-# chute  
-cont = 0
-palavraFixa = "palavra"
-tamanho = len(palavraFixa)
-
-""" aqui converte em lista (string to lista), 
-isso foi feito para a gente conseguir substituir a letra encotrada, 
-mas ainda temos o problema de ter mais de uma letra na palavra """
-palavraAuxiliar = list('-' * tamanho) 
-
-print("Descubra a palavra {}".format(palavraAuxiliar))
-letra = input()
-
-letra_existe(palavraFixa, letra)
-
-
-
-"""
-QuatidadeDeChances = 5
-while True:
-   
-    print('-' * tamanho)
-
-
-    for i in range(QuatidadeDeChances):
-        print('Sua chance atual é {}'.format(QuatidadeDeChances-i))
-        letra = input()
-        
-   """
-
-
-  
 
