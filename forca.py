@@ -9,14 +9,15 @@ def find_boneco(chute):
     return tela[chute]
 
 def letra_existe(palavra, letra):
-    cont = 0
-    for i, c in enumerate(palavra):
-        if (c == letra):
-            palavraAuxiliar[i] = letra
+    cont = 0 # casa, a
+    for index,valor in enumerate(palavra):
+        if (valor == letra):
+            palavraAuxiliar[index] = letra 
             cont += 1
     return cont
 
-palavraFixa = "palavra"
+print('\033[1;32;40mJOGO DA FORCA\033[m')
+palavraFixa = "casa"
 tamanho = len(palavraFixa)
 palavraAuxiliar = list('-' * tamanho) 
 chutes = 6
