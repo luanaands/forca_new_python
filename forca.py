@@ -1,10 +1,9 @@
 def find_boneco(chute):
-    tela = { 7 : "", 
-        6 : "  \n||\n||\n", 
-        5 : "\n(||\n ||\n",
-        4 : "\n(||)\n ||\n",
-        3 : "\n(||)\n ||\n /" ,
-        2 : "\n(||)\n ||\n /|",
+    tela = { 6 : "", 
+        5 : "  \n||\n||\n", 
+        4 : "\n(||\n ||\n",
+        3 : "\n(||)\n ||\n",
+        2 : "\n(||)\n ||\n /" ,
         1 : "\n(||)\n ||\n /|",
         0 : "  O\n(||)\n ||\n /|"}
     return tela[chute]
@@ -20,7 +19,7 @@ def letra_existe(palavra, letra):
 palavraFixa = "palavra"
 tamanho = len(palavraFixa)
 palavraAuxiliar = list('-' * tamanho) 
-chutes = 7
+chutes = 6
 letras = 0
 while chutes > 0:
     boneco = find_boneco(chutes)
